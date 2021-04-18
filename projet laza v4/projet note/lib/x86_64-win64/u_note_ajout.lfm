@@ -1,0 +1,73 @@
+object f_note_ajout: Tf_note_ajout
+  Left = 892
+  Height = 160
+  Top = 817
+  Width = 320
+  Caption = 'f_note_ajout'
+  ClientHeight = 160
+  ClientWidth = 320
+  ParentFont = True
+  LCLVersion = '1.6.0.4'
+  object pnl_titre: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 320
+    Align = alTop
+    Caption = 'Ajout d''une note'
+    TabOrder = 0
+  end
+  object pnl_detail: TPanel
+    Left = 0
+    Height = 110
+    Top = 50
+    Width = 320
+    Align = alClient
+    ClientHeight = 110
+    ClientWidth = 320
+    TabOrder = 1
+    OnClick = pnl_detailClick
+    object lbl_note_num: TLabel
+      Left = 24
+      Height = 15
+      Top = 16
+      Width = 42
+      Caption = 'numéro'
+      ParentColor = False
+    end
+    object cbo_note_num: TComboBox
+      Left = 24
+      Height = 21
+      Top = 32
+      Width = 100
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 15
+      OnCloseUp = cbo_note_numCloseUp
+      Style = csOwnerDrawFixed
+      TabOrder = 0
+      Text = 'cbo_note_num'
+    end
+    object lbl_note_nature: TLabel
+      Left = 152
+      Height = 15
+      Top = 16
+      Width = 34
+      Caption = 'nature'
+      ParentColor = False
+    end
+    object cbo_note_nature: TComboBox
+      Left = 152
+      Height = 21
+      Top = 30
+      Width = 100
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 15
+      OnCloseUp = cbo_note_natureCloseUp
+      Style = csOwnerDrawFixed
+      TabOrder = 1
+      Text = 'cbo_note_nature'
+    end
+  end
+end

@@ -1,0 +1,149 @@
+inherited f_note_list: Tf_note_list
+  Height = 293
+  Top = 534
+  Width = 601
+  Caption = 'f_note_list'
+  ClientHeight = 293
+  ClientWidth = 601
+  inherited pnl_titre: TPanel
+    Width = 601
+    ClientWidth = 601
+    object lbl_titre_etu: TLabel[0]
+      Left = 0
+      Height = 34
+      Top = 0
+      Width = 249
+      Align = alLeft
+      Caption = 'Relevé de Notes - Moyenne étudiant : '
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object lbl_titre_filiere: TLabel[1]
+      Left = 304
+      Height = 34
+      Top = 0
+      Width = 109
+      Align = alLeft
+      Caption = 'Moyenne filière :'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object edt_num: TEdit[2]
+      Left = 249
+      Height = 27
+      Top = 34
+      Width = 23
+      OnChange = edt_numChange
+      TabOrder = 1
+    end
+    object mmo_moyennev2: TMemo[3]
+      Left = 249
+      Height = 27
+      Top = 7
+      Width = 55
+      Align = alLeft
+      BorderSpacing.Top = 7
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Calibri'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnChange = mmo_moyennev2Change
+      ParentFont = False
+      TabOrder = 0
+    end
+    object edt_filiere: TEdit[4]
+      Left = 464
+      Height = 27
+      Top = 34
+      Width = 80
+      TabOrder = 3
+      Text = 'edt_filiere'
+    end
+    object mmo_moyenne_filiere: TMemo[5]
+      Left = 413
+      Height = 27
+      Top = 7
+      Width = 188
+      Align = alClient
+      BorderSpacing.Top = 7
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Calibri'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  inherited pnl_btn: TPanel
+    Top = 259
+    Width = 601
+    ClientWidth = 601
+    inherited pnl_btn_page: TPanel
+      inherited btn_page_prior: TSpeedButton
+        OnClick = btn_page_priorClick
+      end
+      inherited btn_page_last: TSpeedButton
+        OnClick = btn_page_lastClick
+      end
+    end
+    inherited pnl_btn_ligne: TPanel
+      Width = 202
+      ClientWidth = 202
+      inherited btn_line_detail: TSpeedButton
+        Left = 40
+        OnClick = btn_line_detailClick
+      end
+      inherited btn_line_add: TSpeedButton
+        Left = 81
+        OnClick = btn_line_addClick
+      end
+      inherited btn_line_delete: TSpeedButton
+        Left = 160
+        OnClick = btn_line_deleteClick
+      end
+      inherited btn_line_edit: TSpeedButton
+        Left = 120
+        OnClick = btn_line_editClick
+      end
+    end
+  end
+  inherited pnl_affi: TPanel
+    Height = 225
+    Width = 601
+    ClientHeight = 225
+    ClientWidth = 601
+    inherited sg_liste: TStringGrid
+      Height = 225
+      Width = 601
+      ColCount = 3
+      Columns = <      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'UE'
+          Width = 380
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'Coef'
+          Width = 100
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'Note'
+          Width = 100
+        end>
+      ColWidths = (
+        380
+        100
+        100
+      )
+      Cells = (
+        0
+      )
+    end
+  end
+end

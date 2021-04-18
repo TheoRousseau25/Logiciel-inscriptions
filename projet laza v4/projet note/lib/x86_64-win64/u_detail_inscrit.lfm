@@ -1,0 +1,472 @@
+object f_detail_inscrit: Tf_detail_inscrit
+  Left = 370
+  Height = 674
+  Top = 237
+  Width = 952
+  Caption = 'f_detail_inscrit'
+  ClientHeight = 674
+  ClientWidth = 952
+  ParentFont = True
+  LCLVersion = '1.6.0.4'
+  object pnl_titre: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 952
+    Align = alTop
+    TabOrder = 0
+    OnClick = pnl_titreClick
+  end
+  object pnl_btn: TPanel
+    Left = 0
+    Height = 44
+    Top = 630
+    Width = 952
+    Align = alBottom
+    ClientHeight = 44
+    ClientWidth = 952
+    TabOrder = 1
+    OnClick = pnl_btnClick
+    object btn_annuler: TButton
+      Left = 768
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Annuler'
+      OnClick = btn_annulerClick
+      TabOrder = 0
+    end
+    object btn_retour: TButton
+      Left = 768
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Retour liste'
+      OnClick = btn_retourClick
+      TabOrder = 1
+    end
+    object btn_valider: TButton
+      Left = 656
+      Height = 25
+      Top = 14
+      Width = 75
+      Caption = 'Valider'
+      OnClick = btn_validerClick
+      TabOrder = 2
+    end
+  end
+  object pnl_detail: TPanel
+    Left = 0
+    Height = 580
+    Top = 50
+    Width = 952
+    Align = alClient
+    ClientHeight = 580
+    ClientWidth = 952
+    TabOrder = 2
+    OnClick = pnl_detailClick
+    object pnl_ident: TPanel
+      Left = 1
+      Height = 75
+      Top = 1
+      Width = 950
+      Align = alTop
+      ClientHeight = 75
+      ClientWidth = 950
+      TabOrder = 0
+      OnClick = pnl_identClick
+      object lbl_ident: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 140
+        AutoSize = False
+        Caption = 'IDENTIFICATION'
+        ParentColor = False
+      end
+      object lbl_num: TLabel
+        Left = 56
+        Height = 15
+        Top = 16
+        Width = 42
+        Caption = 'numéro'
+        ParentColor = False
+      end
+      object lbl_nom: TLabel
+        Left = 288
+        Height = 15
+        Top = 14
+        Width = 25
+        Caption = 'nom'
+        ParentColor = False
+      end
+      object lbl_civilite_erreur: TLabel
+        Left = 168
+        Height = 15
+        Top = 56
+        Width = 88
+        Caption = 'lbl_civilite_erreur'
+        ParentColor = False
+      end
+      object edt_num: TEdit
+        Left = 60
+        Height = 23
+        Top = 32
+        Width = 80
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_numChange
+        TabOrder = 0
+        Text = 'EDT_NUM'
+      end
+      object edt_civilite: TEdit
+        Left = 168
+        Height = 23
+        Top = 32
+        Width = 80
+        AutoSize = False
+        CharCase = ecUppercase
+        OnEnter = edt_Enter
+        OnExit = edt_civiliteExit
+        TabOrder = 1
+        Text = 'EDT_CIVILITE'
+      end
+      object edt_nom: TEdit
+        Left = 288
+        Height = 23
+        Top = 32
+        Width = 180
+        AutoSize = False
+        CharCase = ecUppercase
+        OnEnter = edt_Enter
+        OnExit = edt_nomExit
+        TabOrder = 2
+        Text = 'EDT_NOM'
+      end
+      object lbl_prenom: TLabel
+        Left = 496
+        Height = 15
+        Top = 16
+        Width = 42
+        Caption = 'prenom'
+        ParentColor = False
+      end
+      object edt_prenom: TEdit
+        Left = 496
+        Height = 23
+        Top = 32
+        Width = 180
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_prenomChange
+        OnEnter = edt_Enter
+        OnExit = edt_prenomExit
+        TabOrder = 3
+        Text = 'EDT_PRENOM'
+      end
+      object lbl_nom_erreur: TLabel
+        Left = 288
+        Height = 15
+        Top = 56
+        Width = 79
+        Caption = 'lbl_nom_erreur'
+        ParentColor = False
+      end
+      object lbl_prenom_erreur: TLabel
+        Left = 496
+        Height = 15
+        Top = 56
+        Width = 96
+        Caption = 'lbl_prenom_erreur'
+        ParentColor = False
+      end
+      object lbl_num_erreur: TLabel
+        Left = 72
+        Height = 15
+        Top = 56
+        Width = 79
+        Caption = 'lbl_num_erreur'
+        ParentColor = False
+      end
+    end
+    object pnl_adresse: TPanel
+      Left = 1
+      Height = 108
+      Top = 76
+      Width = 950
+      Align = alTop
+      ClientHeight = 108
+      ClientWidth = 950
+      TabOrder = 1
+      OnClick = pnl_adresseClick
+      object lbl_adresse: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 140
+        AutoSize = False
+        Caption = 'ADRESSE'
+        ParentColor = False
+      end
+      object edt_adresse: TEdit
+        Left = 56
+        Height = 23
+        Top = 16
+        Width = 412
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_adresseChange
+        OnEnter = edt_Enter
+        OnExit = edt_adresseExit
+        TabOrder = 0
+        Text = 'EDT_ADRESSE'
+      end
+      object edt_codepostal: TEdit
+        Left = 56
+        Height = 23
+        Top = 64
+        Width = 80
+        AutoSize = False
+        CharCase = ecUppercase
+        OnEnter = edt_Enter
+        OnExit = edt_codepostalExit
+        TabOrder = 1
+        Text = 'EDT_CODEPOSTAL'
+      end
+      object edt_commune: TEdit
+        Left = 176
+        Height = 23
+        Top = 64
+        Width = 300
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_communeChange
+        OnEnter = edt_Enter
+        TabOrder = 2
+        Text = 'EDT_COMMUNE'
+      end
+      object lbl_adresse_erreur: TLabel
+        Left = 56
+        Height = 15
+        Top = 40
+        Width = 93
+        Caption = 'lbl_adresse_erreur'
+        ParentColor = False
+      end
+      object lbl_codepostal_erreur: TLabel
+        Left = 56
+        Height = 15
+        Top = 88
+        Width = 112
+        Caption = 'lbl_codepostal_erreur'
+        ParentColor = False
+      end
+      object lbl_commune_erreur: TLabel
+        Left = 272
+        Height = 15
+        Top = 88
+        Width = 109
+        Caption = 'lbl_commune_erreur'
+        ParentColor = False
+      end
+    end
+    object pnl_contact: TPanel
+      Left = 1
+      Height = 88
+      Top = 184
+      Width = 950
+      Align = alTop
+      ClientHeight = 88
+      ClientWidth = 950
+      TabOrder = 2
+      object lbl_contact: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 140
+        AutoSize = False
+        Caption = 'CONTACT'
+        ParentColor = False
+      end
+      object lbl_telephone: TLabel
+        Left = 56
+        Height = 15
+        Top = 24
+        Width = 71
+        AutoSize = False
+        Caption = 'téléphone'
+        ParentColor = False
+      end
+      object lbl_portable: TLabel
+        Left = 168
+        Height = 15
+        Top = 24
+        Width = 62
+        AutoSize = False
+        Caption = 'portable'
+        ParentColor = False
+      end
+      object lbl_mel: TLabel
+        Left = 288
+        Height = 15
+        Top = 24
+        Width = 48
+        AutoSize = False
+        Caption = 'mel'
+        ParentColor = False
+      end
+      object edt_telephone: TEdit
+        Left = 56
+        Height = 23
+        Top = 40
+        Width = 100
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_telephoneChange
+        OnEnter = edt_Enter
+        TabOrder = 0
+        Text = 'EDT_TELEPHONE'
+      end
+      object edt_portable: TEdit
+        Left = 166
+        Height = 23
+        Top = 40
+        Width = 100
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_portableChange
+        OnEnter = edt_Enter
+        TabOrder = 1
+        Text = 'EDT_PORTABLE'
+      end
+      object edt_mel: TEdit
+        Left = 288
+        Height = 23
+        Top = 40
+        Width = 388
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_melChange
+        OnEnter = edt_Enter
+        TabOrder = 2
+        Text = 'EDT_MEL'
+      end
+      object lbl_telephone_erreur: TLabel
+        Left = 56
+        Height = 15
+        Top = 64
+        Width = 107
+        Caption = 'lbl_telephone_erreur'
+        ParentColor = False
+      end
+      object lbl_mel_erreur: TLabel
+        Left = 288
+        Height = 15
+        Top = 64
+        Width = 74
+        Caption = 'lbl_mel_erreur'
+        ParentColor = False
+      end
+    end
+    object pnl_filiere: TPanel
+      Left = 1
+      Height = 75
+      Top = 272
+      Width = 950
+      Align = alTop
+      ClientHeight = 75
+      ClientWidth = 950
+      TabOrder = 3
+      OnClick = pnl_filiereClick
+      object lbl_filiere: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 140
+        AutoSize = False
+        Caption = 'FILIERE'
+        ParentColor = False
+      end
+      object edt_filiere: TEdit
+        Left = 56
+        Height = 23
+        Top = 16
+        Width = 100
+        AutoSize = False
+        CharCase = ecUppercase
+        OnChange = edt_filiereChange
+        TabOrder = 0
+        Text = 'EDT_FILIERE'
+      end
+      object mmo_filiere: TMemo
+        Left = 200
+        Height = 58
+        Top = 8
+        Width = 128
+        Lines.Strings = (
+          'mmo_filiere'
+        )
+        OnClick = mmo_filiereClick
+        TabOrder = 1
+      end
+      object lbl_filiere_erreur: TLabel
+        Left = 24
+        Height = 1
+        Top = 48
+        Width = 1
+        ParentColor = False
+      end
+    end
+    object pnl_notes: TPanel
+      Left = 1
+      Height = 232
+      Top = 347
+      Width = 950
+      Align = alClient
+      ClientHeight = 232
+      ClientWidth = 950
+      TabOrder = 4
+      OnClick = pnl_notesClick
+      object pnl_notes_titre: TPanel
+        Left = 1
+        Height = 50
+        Top = 1
+        Width = 948
+        Align = alTop
+        ClientHeight = 50
+        ClientWidth = 948
+        TabOrder = 0
+        object lbl_notes: TLabel
+          Left = 1
+          Height = 48
+          Top = 1
+          Width = 70
+          Align = alLeft
+          AutoSize = False
+          Caption = 'NOTES'
+          ParentColor = False
+        end
+        object lbl_notes_erreur: TLabel
+          Left = 81
+          Height = 48
+          Top = 1
+          Width = 83
+          Align = alLeft
+          BorderSpacing.Left = 10
+          Caption = 'lbl_notes_erreur'
+          Layout = tlCenter
+          ParentColor = False
+        end
+      end
+      object pnl_notes_list: TPanel
+        Left = 1
+        Height = 180
+        Top = 51
+        Width = 720
+        Align = alLeft
+        TabOrder = 1
+        OnClick = pnl_notes_listClick
+      end
+    end
+  end
+end
